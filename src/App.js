@@ -2,16 +2,19 @@
 // react-todo-list 01/15/2022
 //import './App.css';
 import React from 'react';
-import {  Row, Col, InputGroup, Button, Form, Jumbotron } from 'bootstrap'
+import { Container, Row, Col, InputGroup, Button, Form, Jumbotron } from 'react-bootstrap'
 
 // Set URL
-let url = '/api/todos'
+let url = '/api/todos' // ERROR!! if http://localhost:
 function App() {
   return (
-    <div className="App">
-      <TodoListCard />
-      <h1>Hello World!!!</h1>
-    </div>
+    <Container>
+      <Row>
+        <Col md={{ offset: 3, span: 6 }}>
+          <TodoListCard />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 function TodoListCard() {
@@ -32,26 +35,32 @@ function TodoListCard() {
       {items.length === 0 && (
         <p className="text-center">You have no items yet!!</p>
       )}
-      { items.map( item => (
+      {items.map(item => (
         <ItemDisplay
-           item = {item }
-           key = {item._id } // ERROR!!
+          item={item}
+          key={item._id} // ERROR!! if commented out
         />
       ))}
     </React.Fragment>
   )
 }
-function AddItemForm ( { onNewItem }) {
+function AddItemForm({ onNewItem }) {
   const [newItem, setNewItem] = React.useState('');
 }
 
-function ItemDisplay ( { item }) {
+function ItemDisplay({ item }) {
   console.log(`48 - ${item.title} ${item._id}`);
   return (
-   <>
-      {item.title} {item._id } {'\n'}
-   </>
-    
+    <Container fluid className={`item ${item.completed && 'completed'}`}>
+      <Row>
+        <Col xs={1} className='text-center'>
+          <Button size='sm' variant='link'>V</Button></Col>
+        <Col xs={10} className='name'>{item.title} </Col>
+        <Col xs={1} className='text-center remove'>
+          <Button size='sm' variant='link'>X</Button></Col>
+      </Row>
+    </Container>
+
   )
 }
 

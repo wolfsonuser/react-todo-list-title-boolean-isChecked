@@ -37,3 +37,14 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 1. and npm audit fix --force: run twice since after the first run more vulnerabilities appeared. In addition from react-scripts 5.0.0 went back to 3.x.x
 1. 8 moderate severity vulnerabilities: recommend to run audit --force, but not.
 1. npm start to verify that react-todo-list app is OK
+
+### Modify Source Code to include UX for todo-list
+
+1. In app.js add imports
+1. Installed bootstrap
+1. Generated possible errors: lack of unique keys, passing object to render as child, url in different domain (cors error), added proxy with backend API url
+1. After GET /api/todos route worked out, installed react-bootstrap (Container).
+1. Todo items are displayed using ItemDisplay function, but on a separate line.
+1. Fixed by adding import 'bootstrap/dist/css/bootstrap.min.css'; in index.js
+1. found in: https://react-bootstrap.github.io/getting-started/introduction
+1. In ItemDisplay: added buttons, not added icon tags yet, neither onClick functions
