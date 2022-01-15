@@ -1,23 +1,13 @@
-import logo from './logo.svg';
+//  Nelson Lopez
+// react-todo-list 01/15/2022
 import './App.css';
+const bootstrap = require('bootstrap');
 
 function App() {
+  const { Container, Row, Col } = bootstrap;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello World!!!</h1>
     </div>
   );
 }
