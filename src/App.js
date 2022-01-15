@@ -31,7 +31,7 @@ function TodoListCard() {
   return (
     <React.Fragment>
       {/* <AddItemForm onNewItem={onNewItem} /> */}
-      {/* <AddItemForm  /> */}
+      <AddItemForm  />
       {items.length === 0 && (
         <p className="text-center">You have no items yet!!</p>
       )}
@@ -44,8 +44,25 @@ function TodoListCard() {
     </React.Fragment>
   )
 }
-function AddItemForm({ onNewItem }) {
+function AddItemForm() {
   const [newItem, setNewItem] = React.useState('');
+  const [submitting, setSubmitting] = React.useState(false);
+
+  const submitNewItem = e => {
+
+  }
+  return (
+    <Form onSubmit={submitNewItem}>
+      <InputGroup className='mb-3'>
+          {/* ERROR!!! Below line gives an error, WHY??? */}
+        {/* <Form.control value={newItem} type="text" placeholder="New Item" /> */}
+        <Form.Control size="lg" type="text" placeholder="New Item" />
+        <Button>
+          Button
+        </Button>
+      </InputGroup>
+    </Form>
+  )
 }
 
 function ItemDisplay({ item }) {

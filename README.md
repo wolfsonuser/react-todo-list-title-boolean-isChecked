@@ -48,3 +48,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 1. Fixed by adding import 'bootstrap/dist/css/bootstrap.min.css'; in index.js
 1. found in: https://react-bootstrap.github.io/getting-started/introduction
 1. In ItemDisplay: added buttons, not added icon tags yet, neither onClick functions
+1. It is Form.Control not Form.control!!!!
+1. Aria-label: for assistive technologies, screen readers for instance
